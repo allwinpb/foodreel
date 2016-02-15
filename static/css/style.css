@@ -1,0 +1,193 @@
+.claimsChart {
+  float: left;
+  background: white;
+  height: 100%;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 10px;
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:10px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:sans-serif
+}
+
+.mapBox {
+  float: left;
+  background: white;
+  height: 60%;
+  width: 50%;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 10px;
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:8px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:sans-serif
+}
+.biometric {
+  float: left;
+  background: white;
+  height: 100%;
+  width: 100%;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  padding: 10px;
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:100;
+	font-size:5px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:sans-serif
+}
+.arc path {
+  stroke: #fff;
+}
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: orangered;
+}
+
+.axis {
+  font: 5px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+
+text.inner-circle {
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.arc {
+  cursor: pointer;
+
+  &:hover {
+    opacity: .85;
+  }
+  
+  text {
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+  }
+}
+
+.chart .legend {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: start;
+  font-size: 12px;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart .label {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: end;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.tooltip {                                                        /* NEW */
+        background: #eee;                                               /* NEW */
+        box-shadow: 0 0 5px #999999;                                    /* NEW */
+        color: #333;                                                    /* NEW */
+        display: none;                                                  /* NEW */
+        font-size: 12px;                                                /* NEW */
+        left: 130px;                                                    /* NEW */
+        padding: 10px;                                                  /* NEW */
+        position: absolute;                                             /* NEW */
+        text-align: center;                                             /* NEW */
+        top: 95px;                                                      /* NEW */
+        width: 80px;                                                    /* NEW */
+        z-index: 10;                                                    /* NEW */
+      }                                                                 /* NEW */
+.legend {                                                  
+        font-size: 12px;                                         
+      }                                                          
+rect {
+        cursor: pointer;                                              /* NEW */
+        stroke-width: 2;
+      }
+rect.disabled {                                                 /* NEW */
+        fill: transparent !important;                                 /* NEW */
+      }                                                               /* NEW */
+h1 {                                                            /* NEW */
+        font-size: 14px;                                              /* NEW */
+        text-align: center;                                           /* NEW */
+      }                                                               /* NEW */
+      
+.domain {
+  fill: none;
+  stroke: grey;
+  stroke-width; 1;
+} 
+
+

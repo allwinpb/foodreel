@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>FoodReel</title>
+<link rel="stylesheet" href="files/faary.css" type="text/css" />
+<link rel="stylesheet" href="files/starrating.css" type="text/css" />
+<link href="font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet"></link>
+<script type="text/javascript" src="files/jquery.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+<link href='css/c3.css' rel='stylesheet' type='text/css'>
+  <link href="css/custom.css" rel="stylesheet"></link>
+  <link href="css/style.css" rel="stylesheet">
+<script src="js/c3.min.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.metisMenu.js"></script>
+<script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+<div class="container-fluid main-header">
+ <nav class="navbar navbar-static-top" role="navigation" style="height:5vw;">
+  <div class="navbar-header" >
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-Settings-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+  <a class="navbar-brand" href="#"><img src="Logo.png" id="Logo-logo" height="100" width="200" class="img-resposive"></a>
+  </div>
+  <div class="collapse navbar-collapse navbar-right" id="bs-Settings-navbar-collapse-1" >
+  </div>
+  </div>
+
+<hr>
+<aside class="main-sidebar" id="mainPageSidebar">
+	<nav class="navbar-default navbar-side" role="navigation">
+	    <div class="sidebar-collapse">
+	   		<ul class="nav" id="main-menu">
+			    <li>
+				<a class="active-menu"  href="#" onclick="showWard('selection','history','bill','updated')"><i class="fa fa-cutlery fa-2x"></i> &nbsp &nbsp &nbsp Meal Settings</a>
+		        </li>
+			    <li>
+				<a class="active-menu"  href="#" onclick="showWard('bill','history','selection','updated')"><i class="fa fa-shopping-cart fa-2x" ></i> &nbsp &nbsp &nbsp Billing</a>
+				</li>
+				<a class="active-menu"  href="#" onclick="showWard('history','bill','selection','updated')"><i class="fa fa-bar-chart fa-2x" ></i> &nbsp &nbsp &nbsp Analytics</a>
+		        </li>		        
+	   		</ul>
+	    </div>
+	</nav>
+</aside>
+
+
+
+<div class="row" id="selection" style='display:block' border="1">
+	<form method="post" action="" onsubmit="return:false" class="iform">
+	<div id="imessageOK">Thank you! Message Sent!</div>
+	<div id="imessageERROR">ERROR: Message Not Sent!</div>
+	<ul>
+	<li class="iheader" style="font-size:20px">Choose Model</li>
+
+	<li><label for="model" style="font-size:13px">Week per employee</label>
+		<select class="iselect" name="model" id="model">
+			<option>1 Meal</option>
+			<option>2 Meal</option>
+			<option>3 Meal</option>
+			<option>4 Meal</option>
+			<option>5 Meal</option>
+		</select>
+	</li>
+
+<br><br>
+	<li class="iheader" style="font-size:20px">Food Specification</li>
+
+	<li><label for="budget" style="font-size:13px">Maximum Budget (S$/meal) </label>
+        <form><input id="budget"  type="text" name="q" placeholder="" autocomplete="off"></form>
+	</li>
+
+<br>
+	<li><label for="choice" style="font-size:13px">Meal Choice</label>
+        <form><input id="choice"  type="text" name="q" placeholder="" autocomplete="off"></form>
+	</li>
+
+
+	<br><br>
+	<li><label>&nbsp;</label style="font-size:15px"><input type="button" class="ibutton" onclick="showWard('updated','selection','bill','history')" name="Update" id="Update" value="Update!" /></li>
+	</ul></form>
+
+	<div id="overlay">
+	     <div>
+	          <p></p>
+	     </div>
+	</div>
+</div>
+
+
+<div id="updated" style='display:none'>
+	<br><br><br><br>
+	<form method="post" action="" onsubmit="return:false" class="iform">
+	<li><label></label style="font-size:15px" assign="center">
+	<input type="button" class="ibutton" name="updated" id="updated" value="Updated!" /></li></form>
+</div>
+
+
+<div id="bill" style='display:none'>
+
+
+	<table>
+		<th>
+			<td>Restaurant</td>
+			<td>Invoice</td>
+			<td>Total</td>
+		</th>
+		<tr>
+			<td>Pita Pit</td>
+			<td></td>
+			<td>S$100.00</td> 
+		</tr>
+	</table>
+</div>
+
+
+<div id="history" style='display:none'>
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+function showWard(id1, id2,id3,id4) {	
+	document.getElementById(id1).style.display = 'block';
+	document.getElementById(id2).style.display = 'none';
+	document.getElementById(id3).style.display = 'none';
+	document.getElementById(id4).style.display = 'none';
+}
+</script>
+
+
