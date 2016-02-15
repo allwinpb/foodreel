@@ -1,0 +1,15 @@
+body {
+  font-size: 15px;
+}
+.billing table.table td:last-child {
+  font-weight: 600;
+  color: #1a9d7f;
+}
+.billing table.table td,
+.billing table.table th {
+  padding: 25px;
+}
+
+.panel.panel-default {
+  margin: 50px;
+}
