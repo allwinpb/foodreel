@@ -9,9 +9,9 @@ function packageFood(foods){
   return foods.map(function(food){
     food = food.split('\t')
     return {
-      mealPhoto: '/assets/images/' + food[5],
+      mealPhoto: '/images/' + food[5],
       restaurant: food[1],
-      restaurantLogo: '/assets/images/' + food[0],
+      restaurantLogo: '/images/' + food[0],
       meal: food[2],
       redeemCode: Math.random().toString(16).slice(2).toUpperCase(),
       description: food[2] + ' is Food. Food is energy. Q.E.D ' +  food[2] + ' is energy.',
@@ -40,7 +40,15 @@ var foods = packageFood(
 
 router
 .get('/list-food-items', function *(next){
-  this.body = JSON.stringify(foods)
+  var filters = readPreferences()
+  var validFoods = foods.filter(function(food){
+    var validBudget = true
+    if(filters.maxBudget && food.cost > parseFloat(filters.maxBudget)){
+      validBudget = false
+    }
+    return validBudget
+  })
+  this.body = JSON.stringify(validFoods)
 })
 .get('/get-employer-preferences', function *(next){
   this.body = JSON.stringify(readPreferences())
