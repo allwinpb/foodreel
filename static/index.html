@@ -59,19 +59,19 @@
 
 <!-- <div class="container"> -->
 <div class="row" id="selection" style='display:block' border="1">
-	<form method="post" action="" onsubmit="return:false" class="iform">
+	<form method="get" action="/update-employer-preferences" onsubmit="return:false" class="iform">
 	<div id="imessageOK">Thank you! Message Sent!</div>
 	<div id="imessageERROR">ERROR: Message Not Sent!</div>
 	<ul>
 	<li class="iheader" style="font-size:20px">Choose Model</li>
 
 	<li><label for="model" style="font-size:13px">Week per employee</label>
-		<select class="iselect" name="model" id="model">
-			<option>1 Meal</option>
-			<option>2 Meal</option>
-			<option>3 Meal</option>
-			<option>4 Meal</option>
-			<option>5 Meal</option>
+		<select class="iselect" name="mealplan" id="model">
+			<option value="1">1 Meal</option>
+			<option value="2">2 Meal</option>
+			<option value="3">3 Meal</option>
+			<option value="4">4 Meal</option>
+			<option value="5">5 Meal</option>
 		</select>
 	</li>
 
@@ -79,13 +79,10 @@
 	<li class="iheader" style="font-size:20px">Food Specification</li>
 
 	<li><label for="budget" style="font-size:13px">Maximum Budget (S$/meal) </label>
-        <form><input id="budget"  type="text" name="q" placeholder="" autocomplete="off"></form>
+        <form><input id="budget"  type="text" name="maxBudget" value="11" autocomplete="off"></form>
 	</li>
 
 <br>
-	<li><label for="choice" style="font-size:13px">Meal Choice</label>
-        <form><input id="choice"  type="text" name="q" placeholder="" autocomplete="off"></form>
-	</li>
 
 
 	<br><br>

@@ -57,7 +57,8 @@ router
   var prefs = readPreferences()
   prefs = _.merge(prefs, this.request.query)
   writePreferences(prefs)
-  this.body = JSON.stringify(readPreferences())
+  console.log(readPreferences())
+  this.response.redirect('/')
 })
 .get('/get-meal-choices', function *(next){
   var filters = this.request.query
