@@ -1,2 +1,2 @@
-subway.gif	Subway	6' Black Forest Ham	10	290
-subway.gif	Subway	6' Oven Roasted Chicken	15	320
+subway.gif	Subway	6' Black Forest Ham	10	290	black-forest-ham.jpg
+subway.gif	Subway	6' Oven Roasted Chicken	15	320	oven-roasted-chicken.jpg

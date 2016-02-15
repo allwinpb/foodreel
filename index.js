@@ -9,7 +9,7 @@ function packageFood(foods){
   return foods.map(function(food){
     food = food.split('\t')
     return {
-      mealPhoto: '/assets/images/' + food[0],
+      mealPhoto: '/assets/images/' + food[5],
       restaurant: food[1],
       restaurantLogo: '/assets/images/' + food[0],
       meal: food[2],
