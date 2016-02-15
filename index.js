@@ -1,6 +1,7 @@
 var fs = require('fs');
 var koa = require('koa');
 var app = koa();
+var serve = require('koa-static');
 var _ = require('lodash');
 var router = require('koa-router')();
 
@@ -80,5 +81,5 @@ app.use(function *(next){
 // response
 app.use(router.routes())
 app.use(router.allowedMethods())
-
+app.use(serve('static'))
 app.listen(3000);
