@@ -9,12 +9,16 @@
 <script type="text/javascript" src="files/jquery.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet"></link>
 <link href='css/c3.css' rel='stylesheet' type='text/css'>
-  <link href="css/custom.css" rel="stylesheet"></link>
-  <link href="css/style.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet"></link>
+<link href="css/style.css" rel="stylesheet"> 
+<link rel="stylesheet" href="styles/restaurant.css">
 <script src="js/c3.min.js"></script>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/jquery.metisMenu.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/d3.min.js"></script>
+
+
 </head>
 
 <body>
@@ -39,12 +43,13 @@
 	    <div class="sidebar-collapse">
 	   		<ul class="nav" id="main-menu">
 			    <li>
-				<a class="active-menu"  href="#" onclick="showWard('selection','history','bill','updated')"><i class="fa fa-cutlery fa-2x"></i> &nbsp &nbsp &nbsp Meal Settings</a>
+				<a class="active-menu"  href="#" onclick="showWard('selection','analytics','bill','updated')"><i class="fa fa-cutlery fa-2x"></i> &nbsp &nbsp &nbsp Meal Settings</a>
 		        </li>
 			    <li>
-				<a class="active-menu"  href="#" onclick="showWard('bill','history','selection','updated')"><i class="fa fa-shopping-cart fa-2x" ></i> &nbsp &nbsp &nbsp Billing</a>
+				<a class="active-menu"  href="#" onclick="showWard('bill','analytics','selection','updated')"><i class="fa fa-shopping-cart fa-2x" ></i> &nbsp &nbsp &nbsp Billing</a>
 				</li>
-				<a class="active-menu"  href="#" onclick="showWard('history','bill','selection','updated')"><i class="fa fa-bar-chart fa-2x" ></i> &nbsp &nbsp &nbsp Analytics</a>
+				<br>
+				<a class="active-menu"  href="#" onclick="showWard('analytics','bill','selection','updated')"> &nbsp  &nbsp<i class="fa fa-bar-chart fa-2x" ></i> &nbsp &nbsp &nbsp Analytics</a>
 		        </li>		        
 	   		</ul>
 	    </div>
@@ -52,7 +57,7 @@
 </aside>
 
 
-
+<!-- <div class="container"> -->
 <div class="row" id="selection" style='display:block' border="1">
 	<form method="post" action="" onsubmit="return:false" class="iform">
 	<div id="imessageOK">Thank you! Message Sent!</div>
@@ -84,7 +89,7 @@
 
 
 	<br><br>
-	<li><label>&nbsp;</label style="font-size:15px"><input type="button" class="ibutton" onclick="showWard('updated','selection','bill','history')" name="Update" id="Update" value="Update!" /></li>
+	<li><label>&nbsp;</label style="font-size:15px"><input type="button" class="ibutton" onclick="showWard('updated','selection','bill','analytics')" name="Update" id="Update" style="font-size:15px" color="green" value="Update!" /></li>
 	</ul></form>
 
 	<div id="overlay">
@@ -96,32 +101,124 @@
 
 
 <div id="updated" style='display:none'>
-	<br><br><br><br>
 	<form method="post" action="" onsubmit="return:false" class="iform">
-	<li><label></label style="font-size:15px" assign="center">
-	<input type="button" class="ibutton" name="updated" id="updated" value="Updated!" /></li></form>
+	<li><label></label style="font-size:20px" assign="center">
+	<input type="button" class="ibutton" name="updated" id="updated" style="font-size:20px" value="&nbsp &nbsp &nbsp &nbsp Updated!&nbsp &nbsp &nbsp &nbsp" /></li></form>
 </div>
 
 
-<div id="bill" style='display:none'>
-
-
-	<table>
-		<th>
-			<td>Restaurant</td>
-			<td>Invoice</td>
-			<td>Total</td>
-		</th>
-		<tr>
-			<td>Pita Pit</td>
-			<td></td>
-			<td>S$100.00</td> 
-		</tr>
-	</table>
+<div class="container" id="bill" style='display:none'>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-10">	
+      	<p>01 January 2016 To 31 January 2016</p>
+      </div>
+     </div>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-10">
+        <div class="panel panel-default billing">
+          <div class="panel-body">
+            <table class="table table-striped">
+              <tr>
+                <th>Resterant</th>
+                <th>Invoice</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <td>Pita Pit</td>
+                <td><i class="fa fa-download fa-1x"> &nbsp &nbsp</i><input type="button" class="ibutton" name="pita pit" id="id1" value="&nbsp &nbsp &nbsp &nbsp Download Invoice &nbsp &nbsp &nbsp &nbsp" /></td>
+                <td>S$500</td>
+              </tr>
+              <tr>
+                <td>Greenwich</td>
+                <td><i class="fa fa-download fa-1x"> &nbsp &nbsp</i><input type="button" class="ibutton" name="pita pit" id="id1" value="&nbsp &nbsp &nbsp &nbsp Download Invoice &nbsp &nbsp &nbsp &nbsp" /></td>
+                <td>S$1000</td>
+              </tr>
+              <tr>
+                <td>Subway</td>
+                <td><i class="fa fa-download fa-1x"> &nbsp &nbsp</i><input type="button" class="ibutton" name="pita pit" id="id1" value="&nbsp &nbsp &nbsp &nbsp Download Invoice &nbsp &nbsp &nbsp &nbsp" /></td>
+                <td>S$1500</td>
+              </tr>
+              <tr>
+                <td>Daily Salad</td>
+                <td><i class="fa fa-download fa-1x"> &nbsp &nbsp</i><input type="button" class="ibutton" name="pita pit" id="id1" value="&nbsp &nbsp &nbsp &nbsp Download Invoice &nbsp &nbsp &nbsp &nbsp" /></td>
+                <td>S$900</td>
+              </tr>
+              <tr>
+                <td>Munch Saladsmith</td>
+                <td><i class="fa fa-download fa-1x"> &nbsp &nbsp</i><input type="button" class="ibutton" name="pita pit" id="id1" value="&nbsp &nbsp &nbsp &nbsp Download Invoice &nbsp &nbsp &nbsp &nbsp" /></td>
+                <td>S$800</td>
+              </tr>
+              <tr>
+                <td>Green Bar</td>
+                <td><i class="fa fa-download fa-1x"> &nbsp &nbsp</i><input type="button" class="ibutton" name="pita pit" id="id1" value="&nbsp &nbsp &nbsp &nbsp Download Invoice &nbsp &nbsp &nbsp &nbsp" /></td>
+                <td>S$500</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Total: </td>
+                <td>S$5200</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<div id="history" style='display:none'>
+
+<div class="container" id="analytics" style='display:none'>
+ <div class="row">
+ 	<div class="col-xs-2"></div>
+	<div class="col-xs-10">
+		<div class="panel panel-default">
+			<div class="panel-heading" style ="padding: 2px;">
+				<table tyle="width:150%">
+                    <col width="125%">
+                        <col width="25%">
+                          	<td>
+							<p class="myHead" id="title">Total cost</p>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                  <p style="font-size:1vw;" href="#" class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> &nbsp <span class="caret"></span></p>
+                                  <ul class="dropdown-menu" id='s1'>
+                                    <li><a option='cost_total.csv' href="#1c"selected="false" onclick="changeGraph1(this);" property='Total cost'>Total cost</a></li>
+									<li><a option='cost_average.csv' href="#1c" selected="true" onclick="changeGraph1(this);" property='Average cost per meal'>Average cost per meal</a></li>
+                                  </ul>
+                                </div>
+                        	</td>
+                    </table>
+				</div> 
+				<div class="panel-body" id="cost" style ="padding: 5px;">
+					<script src = "js/cost.js"></script>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+<div class="row">
+ 	<div class="col-xs-2"></div>
+	<div class="col-xs-10">
+		<div class="panel panel-default">
+			<div class="panel-heading text-center" style ="padding: 2px;">
+							<p class="myHead" id="title">Total meals</p>
+			</div> 
+			<div class="panel-body" id="meal" style ="padding: 5px;">
+				<script src = "js/meal.js"></script>
+			</div>
+		</div>
+	</div>
+</div> 
+
+
+
 
 </div>
 
